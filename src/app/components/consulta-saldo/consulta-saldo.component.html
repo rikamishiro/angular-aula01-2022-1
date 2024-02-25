@@ -1,19 +1,25 @@
 <section>
   <h1>
-    Consulta Saldo
+    Consulta saldo
   </h1>
   <header>
     <div>
-      Saldo:
-      {{ cliente.saldo }}
+      <b>Último login</b>:
+      {{ cliente.ultimoLogin | date }}
     </div>
     <div>
-      Nome:
-      {{ cliente.nome }}
+      <b>Nome</b>:
+      {{ cliente.nome | uppercase }}
     </div>
     <div>
-      Último login:
-      {{ cliente.ultimoLogin }}
+      <b>Saldo</b>:
+      <span [className]="cliente.saldo | classNamePorValor">
+        {{ cliente.saldo | currency }}
+      </span>
+    </div>
+    <div *ngIf="cliente.saldo > 0">
+      <b>Crédito pré-aprovado</b>:
+      {{ cliente.creditoPreAprovado | currency }}
     </div>
   </header>
 </section>

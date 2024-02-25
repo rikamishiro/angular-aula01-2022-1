@@ -4,6 +4,10 @@ export class Cliente {
     public saldo: number,
     public ultimoLogin: Date,
   ) {
-
   }
+
+  public get creditoPreAprovado(): number {
+    return this.saldo >= 50 ? 100 : 0;
+  }
+
 }

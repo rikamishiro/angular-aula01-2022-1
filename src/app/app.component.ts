@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ConsultaSaldoComponent } from './components/consulta-saldo/consulta-saldo.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
